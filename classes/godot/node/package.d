@@ -175,6 +175,12 @@ public:
 		return cast(Node)(constructor());
 	}
 	@disable new(size_t s);
+
+	pragma(inline, true) bool isInstanceValid() const
+	{
+		return _godot_api.godot_is_instance_valid(_godot_object);
+	}
+
 	/// 
 	enum PauseMode : int
 	{
